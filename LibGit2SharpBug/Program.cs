@@ -16,6 +16,7 @@ namespace LibGit2SharpBug
                 return -1;
             }
 
+            Console.WriteLine("About to call libgit2sharp code");
             try
             {
                 var repoPath = args[0];
@@ -45,6 +46,10 @@ namespace LibGit2SharpBug
             {
                 Console.Error.WriteLine("Error occurred: {0}", e.ToString());
                 return -2;
+            }
+            finally
+            {
+                Console.WriteLine("This line will not be written on Alpine 3.13");
             }
 
             return 0;
